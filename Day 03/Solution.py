@@ -23,16 +23,6 @@ def get_epsilon(gamma):
     
     return epsilon
 
-def get_decimal(number):
-    decimal = 0
-    n = len(number)
-    
-    for i in range(n):
-        if number[i] == '1':
-            decimal += 2**(n-i-1)
-    
-    return decimal
-
 def find_oxygen(numbers):
     mc = ""
     
@@ -97,13 +87,13 @@ def main():
     #part 1
     gamma = get_gamma(numbers)
     epsilon = get_epsilon(gamma)
-    power_consumption = get_decimal(gamma)*get_decimal(epsilon)
+    power_consumption = int(gamma, 2)*int(epsilon, 2)
     print("Part 1: " + str(power_consumption))
         
     #part 2
     oxygen = find_oxygen(numbers)
     co2 = find_co2(numbers)
-    life_support = get_decimal(oxygen)*get_decimal(co2)
+    life_support = int(oxygen, 2)*int(co2, 2)
     print("Part 2: " + str(life_support))
 
 if __name__ == '__main__':

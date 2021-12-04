@@ -2,10 +2,7 @@ import os
 
 def load_input(file):
     with open(file, 'r') as lines:
-        splited = []
-        for line in lines:
-            splited.append(str(line).split()) 
-        return splited
+        return [str(line).split() for line in lines]
 
 def count_direction(commands):
     horizontal = 0

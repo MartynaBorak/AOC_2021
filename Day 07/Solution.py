@@ -1,4 +1,5 @@
 import os
+import statistics
 
 def load_input(file):
     with open(file, 'r') as lines:
@@ -35,11 +36,9 @@ def main():
     print("Part 1: " + str(min(costs)))
 
     #part 2  
-    costs = []
-    for i in range(min(positions), max(positions)):
-        costs.append(find_cost(positions, i))
-    print("Part 2: " + str(min(costs)))
-    
+    mean = int(statistics.mean(positions)) #the aim needs to be there
+    cost = find_cost(positions, mean)
+    print("Part 2: " + str(cost))
     
 if __name__ == '__main__':
     main()

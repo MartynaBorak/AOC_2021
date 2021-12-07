@@ -1,5 +1,4 @@
 import os
-from collections import Counter
 
 def load_input(file):
     with open(file, 'r') as lines:
